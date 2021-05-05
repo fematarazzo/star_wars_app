@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
   has_many :starship_possessions, dependent: :destroy
-  has_many :starships, through: :starship_possessions
+  # has_many :starships, through: :starship_possessions
 
   has_many :species_people, dependent: :destroy
   has_many :species, through: :species_people
