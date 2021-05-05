@@ -9,5 +9,4 @@ valid:
   gender: "male"
   homeworld: "http://swapi.dev/api/planets/1/"
   species: []
-  starships: ["http://swapi.dev/api/starships/12/","http://swapi.dev/api/starships/22/"]
   url: "http://swapi.dev/api/people/1/"

@@ -1,0 +1,12 @@
+valid:
+  name: "Human"
+  classification: "mammal"
+  designation: "sentient"
+  average_height: "180"
+  skin_colors: "caucasian, black, asian, hispanic"
+  hair_colors: "blonde, brown, black, red"
+  eye_colors: "brown, blue, green, hazel, grey, amber"
+  average_lifespan: "120"
+  homeworld: "http://swapi.dev/api/planets/9/"
+  language: "Galactic Basic"
+  url: "http://swapi.dev/api/species/1/"
