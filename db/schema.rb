@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_125519) do
+ActiveRecord::Schema.define(version: 2021_05_05_125656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 2021_05_05_125519) do
     t.string "homeworld"
     t.text "species", default: [], array: true
     t.text "starships", default: [], array: true
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.string "classification"
+    t.string "designation"
+    t.string "average_height"
+    t.string "average_lifespan"
+    t.string "eye_colors"
+    t.string "hair_colors"
+    t.string "skin_colors"
+    t.string "language"
+    t.string "homeworld"
+    t.text "people", default: [], array: true
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
