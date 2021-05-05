@@ -4,4 +4,7 @@ class Person < ApplicationRecord
 
   has_many :species_people
   has_many :species, through: :species_people
+
+  has_many :planet_people
+  belongs_to :planet, through: :planet_people
 end

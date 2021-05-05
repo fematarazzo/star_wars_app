@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_130521) do
+ActiveRecord::Schema.define(version: 2021_05_05_130809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2021_05_05_130521) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "planet_people", force: :cascade do |t|
+    t.bigint "planet_id", null: false
+    t.bigint "people_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["people_id"], name: "index_planet_people_on_people_id"
+    t.index ["planet_id"], name: "index_planet_people_on_planet_id"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -74,6 +83,15 @@ ActiveRecord::Schema.define(version: 2021_05_05_130521) do
     t.index ["species_id"], name: "index_species_people_on_species_id"
   end
 
+  create_table "species_planets", force: :cascade do |t|
+    t.bigint "species_id", null: false
+    t.bigint "planet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["planet_id"], name: "index_species_planets_on_planet_id"
+    t.index ["species_id"], name: "index_species_planets_on_species_id"
+  end
+
   create_table "starship_possessions", force: :cascade do |t|
     t.bigint "person_id", null: false
     t.bigint "starship_id", null: false
@@ -103,8 +121,12 @@ ActiveRecord::Schema.define(version: 2021_05_05_130521) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "planet_people", "people", column: "people_id"
+  add_foreign_key "planet_people", "planets"
   add_foreign_key "species_people", "people"
   add_foreign_key "species_people", "species"
+  add_foreign_key "species_planets", "planets"
+  add_foreign_key "species_planets", "species"
   add_foreign_key "starship_possessions", "people"
   add_foreign_key "starship_possessions", "starships"
 end
