@@ -17,10 +17,10 @@ class SpeciesTest < ActiveSupport::TestCase
     assert_not_nil @species.errors[:name], 'no validation error for name present'
   end
 
-  test 'invalid without homeworld' do
-    @species.homeworld = nil
+  test 'invalid without average_lifespan' do
+    @species.average_lifespan = nil
     refute @species.valid?
-    assert_not_nil @species.errors[:homeworld]
+    assert_not_nil @species.errors[:average_lifespan]
   end
 
   test 'for name fetch using api' do
