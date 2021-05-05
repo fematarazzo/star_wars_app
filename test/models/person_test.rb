@@ -17,10 +17,10 @@ class PersonTest < ActiveSupport::TestCase
     assert_not_nil @person.errors[:name], 'no validation error for name present'
   end
 
-  test 'invalid without homeworld' do
-    @person.homeworld = nil
+  test 'invalid without birth_year' do
+    @person.birth_year = nil
     refute @person.valid?
-    assert_not_nil @person.errors[:homeworld]
+    assert_not_nil @person.errors[:birth_year]
   end
 
   test 'for name fetch using api' do
