@@ -4,4 +4,6 @@ class Species < ApplicationRecord
 
   has_many :species_planets
   belongs_to :planet, through: :species_planets
+  
+  validates :name, :classification, :designation, :average_height, :average_lifespan, :eye_colors, :hair_colors, :skin_colors, :language, :homeworld, :people, :url, presence: true
 end
