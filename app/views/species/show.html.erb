@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <h1>About <%= @species.name %></h1>
+</div>
+
+
+
+<div class="mt-5 row card-show justify-content-center">
+    <h3>
+      This are the <%= @species.name %>.
+
+      <%# Checking Species' planet. If it exists, post it. %>
+      <% if @species.planets.first %>
+        <%# If it's only one species, post it. %>
+        <% if @species.planets.count == 1 %>
+          They live in <%= @species.planets.first.name %>.
+        <%# If it's two species, post each name. %>
+        <% elsif @species.planets.count == 2 %>
+          They live in <%= @species.planets.first.name %> and <%= @species.planets.last.name %>.
+        <% else %>
+          <%= @species.planets.reduce("They live in ") {|phrase, planet| phrase + " #{planet.name},"} %>
+        <% end %>
+      <% end %>
+
+      They are classified as <%= @species.classification %>.
+
+      <%# Checking Species' people. If it exists, post it. %>
+      <% if @species.people.first %>
+        <%# If it's only one people, post it. %>
+        <% if @species.people.count == 1 %>
+          The only known person of this species is <%= @species.people.first.name %>.
+        <%# If it's two people, post each name. %>
+        <% elsif @species.people.count == 2 %>
+          The couple of people known of this species area <%= @species.people.first.name %> and <%= @species.people.last.name %>.
+        <% else %>
+          <%= @species.people.reduce("These are some people of this species ") {|phrase, person| phrase + " #{person.name},"} %>
+        <% end %>
+      <% end %>
+
+      Their designation is <%= @species.designation %>.
+      Their average height is <%= @species.average_height %>
+      and have an average lifespan of <%= @species.average_lifespan %> years.
+
+      <%# Checking Species' language. If it exists, post it. %>
+      <% if @species.language != "n/a"%>
+        They speak <%= @species.language %>.
+      <% else %>
+        It's not known what languages they speak.
+      <% end %>
+    </h3>
+</div>
