@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2021_05_06_123149) do
 
   create_table "planet_people", force: :cascade do |t|
     t.bigint "planet_id", null: false
-    t.bigint "people_id", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["people_id"], name: "index_planet_people_on_people_id"
+    t.index ["person_id"], name: "index_planet_people_on_person_id"
     t.index ["planet_id"], name: "index_planet_people_on_planet_id"
   end
 
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_123149) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "planet_people", "people", column: "people_id"
+  add_foreign_key "planet_people", "people"
   add_foreign_key "planet_people", "planets"
   add_foreign_key "species_people", "people"
   add_foreign_key "species_people", "species"
