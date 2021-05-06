@@ -1,9 +1,8 @@
 require "application_system_test_case"
 
 class PeopleTest < ApplicationSystemTestCase
-  test "visiting the index" do
-    visit root_url # "/"
-    assert_selector "h1", text: "Bem-vindos ao universo de Star Wars!"
-    assert_selector ".card-person", count: Person.count
+  test "visiting the homepage" do
+    visit root_url
+    assert_selector ".card", count: Person.count
   end
 end
