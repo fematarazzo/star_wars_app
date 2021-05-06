@@ -49,9 +49,9 @@
       <%# Checking Person's hair' color. If it exists, post it. %>
       <% if @person.hair_color != "none" && @person.hair_color != "n/a" %>
         , <%= @person.hair_color %> colored hair
-        <% else %>
-          , no hair
-        <% end %>
+      <% else %>
+        , no hair
+      <% end %>
 
       <%# Checking Person's skin' color. If it exists, post it. %>
       <% if @person.skin_color %>

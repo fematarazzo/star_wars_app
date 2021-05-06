@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+  <h1>About <%= @planet.name %></h1>
+</div>
+
+<div class="mt-5 row card-show justify-content-center">
+    <h3>
+      This is <%= @planet.name %>.
+
+      <%# Checking Planet's species. If it exists, post it. %>
+      <% if @planet.species.first %>
+        <%# If it's only one species, post it. %>
+        <% if @planet.species.count == 1 %>
+          It has the <%= @planet.species.first.name %> species living here.
+        <%# If it's two species, post each name. %>
+        <% elsif @planet.species.count == 2 %>
+          It has the <%= @planet.species.first.name %> and <%= @planet.species.last.name %> species living here.
+        <% else %>
+          <%= @planet.species.reduce("It has the ") {|phrase, species| phrase + " #{species.name},"} %>
+        <% end %>
+      <% end %>
+
+      <%# Checking Planet's population. If it exists, post it. %>
+      <% if @planet.population != "none" && @planet.population != "unknown" && @planet.population != "0" %>
+        It has a population of <%= @planet.population %> inhabitants.
+      <% else %>
+        No one lives here.
+      <% end %>
+
+      <%# Checking Planet's inhabitants. If it exists, post it. %>
+      <% if @planet.people.first %>
+        <%# If it's only one inhabitant, post it. %>
+        <% if @planet.people.count == 1 %>
+          The only one that lives here is <%= @planet.people.first.name %>.
+        <%# If it's two inhabitants, post each name. %>
+        <% elsif @planet.species.count == 2 %>
+          There two inhabitants here: <%= @planet.people.first.name %> and <%= @planet.people.last.name %>.
+        <% else %>
+          <%= @planet.people.reduce("These are some that live here: ") {|phrase, person| phrase + " #{person.name},"} %>
+        <% end %>
+      <% end %>
+
+      <%# Checking Planet's diameter. If it exists, post it. %>
+      <% if @planet.diameter %>
+        It has a diameter of <%= @planet.diameter %> km.
+      <% end %>
+
+      <%# Checking Planet's rotation_period. If it exists, post it. %>
+      <% if @planet.rotation_period %>
+        Regarding is rotation, it's period is <%= @planet.rotation_period %> hours
+      <% end %>
+
+      <%# Checking Planet's orbital_period. If it exists, post it. %>
+      <% if @planet.orbital_period %>
+        and its orbital period is <%= @planet.orbital_period %> days.
+      <% end %>
+
+      <%# Checking Planet's gravity. If it exists, post it. %>
+      <% if @planet.gravity != "N/A" %>
+        This planet's gravity is <%= @planet.gravity %>.
+      <% else %>
+        This planet's gravity is unknown.
+      <% end %>
+
+      <%# Checking Planet's climate. If it exists, post it. %>
+      <% if @planet.climate %>
+        It's climate is <%= @planet.climate %>
+      <% end %>
+
+      <%# Checking Planet's terrain. If it exists, post it. %>
+      <% if @planet.terrain %>
+        with a <%= @planet.terrain %> terrain
+      <% end %>
+
+      <%# Checking Planet's surface_water. If it exists, post it. %>
+      <% if @planet.surface_water %>
+        and it has <%= @planet.surface_water %> surface water.
+      <% end %>
+    </h3>
+</div>
