@@ -13,10 +13,8 @@
   </head>
 
   <body>
-    <%= link_to root_path do %>
-      <%= image_tag "star-wars.png", alt: "Star Wars", class:"mt-3 ml-3 star-wars-avatar-square"%>
-    <% end %>
-    <div class="container">
+    <%= render "shared/navbar" %>
+    <div class="mt-3 container">
       <%= yield %>
     </div>
   </body>

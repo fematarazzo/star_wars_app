@@ -1,0 +1,17 @@
+.navbar {
+  justify-content: space-between;
+  background: #151528;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.nav-link {
+  color: $light-gray;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: #D91414;
+}

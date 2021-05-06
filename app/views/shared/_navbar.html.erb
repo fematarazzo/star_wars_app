@@ -1,0 +1,18 @@
+<div class="navbar navbar-expand-sm navbar-light navbar">
+  <%= link_to root_path do %>
+    <%= image_tag "star-wars.png", alt: "Star Wars", class:"star-wars-avatar-square"%>
+  <% end %>
+  <div class="navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <%= link_to "Planets", planets_path, class: "nav-link a" %>
+      </li>
+      <li>
+        <%= link_to "Species", species_path, class: "nav-link a" %>
+      </li>
+      <li>
+        <%= link_to "Starships", starships_path, class: "nav-link a" %>
+      </li>
+    </ul>
+  </div>
+</div>
