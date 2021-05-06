@@ -6,7 +6,7 @@
 
 <div class="mt-5 row card-show justify-content-center">
     <h3>
-      This are the <%= @species.name %>.
+      These are the <%= @species.name %>.
 
       <%# Checking Species' planet. If it exists, post it. %>
       <% if @species.planets.first %>
@@ -30,7 +30,7 @@
           The only known person of this species is <%= @species.people.first.name %>.
         <%# If it's two people, post each name. %>
         <% elsif @species.people.count == 2 %>
-          The couple of people known of this species area <%= @species.people.first.name %> and <%= @species.people.last.name %>.
+          The couple of people known of this species are <%= @species.people.first.name %> and <%= @species.people.last.name %>.
         <% else %>
           <%= @species.people.reduce("These are some people of this species ") {|phrase, person| phrase + " #{person.name},"} %>
         <% end %>

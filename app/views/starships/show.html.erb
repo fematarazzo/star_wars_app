@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+  <h1>About <%= @starship.name %></h1>
+</div>
+
+<div class="mt-5 row card-show justify-content-center">
+    <h3>
+      This are the <%= @starship.name %> starship.
+
+      It's model is <%= @starship.model %> with class <%= @starship.starship_class %> .
+
+      <%# Checking Starship' people. If it exists, post it. %>
+      <% if @starship.people.first %>
+        <%# If it's only one people, post it. %>
+        <% if @starship.people.count == 1 %>
+          The only known person to ride this starship is <%= @starship.people.first.name %>.
+        <%# If it's two people, post each name. %>
+        <% elsif @starship.people.count == 2 %>
+          The couple of people known to ride this starship are <%= @starship.people.first.name %> and <%= @starship.people.last.name %>.
+        <% else %>
+          <%= @starship.people.reduce("These are some people that rode this starship: ") {|phrase, person| phrase + " #{person.name},"} %>
+        <% end %>
+      <% end %>
+
+      It's manufacturer by <%= @starship.manufacturer %> and costs <%= @starship.cost_in_credits %>.
+      It's length is <%= @starship.length %>
+
+      <%# Checking Starship' speed. If it exists, post it. %>
+      <% if @starship.max_atmosphering_speed != "n/a"%>
+        and it fly up to  <%= @starship.max_atmosphering_speed %> speed.
+      <% else %>
+        but it doesn't fly.
+      <% end %>
+    </h3>
+</div>
