@@ -13,9 +13,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <div class="mt-3 container">
-      <%= yield %>
+    <div class="page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="container mt-3"><%= yield %></div>
+      <div class="footer-container"><%= render "shared/footer" %></div>
     </div>
   </body>
 </html>
