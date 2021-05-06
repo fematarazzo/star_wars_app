@@ -7,7 +7,7 @@ class SpeciesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get species_show_url
+    get species_url(Species.first)
     assert_response :success
   end
 end
