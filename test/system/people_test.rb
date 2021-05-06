@@ -4,5 +4,6 @@ class PeopleTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit root_url # "/"
     assert_selector "h1", text: "Bem-vindos ao universo de Star Wars!"
+    assert_selector ".card-person", count: Person.count
   end
 end
