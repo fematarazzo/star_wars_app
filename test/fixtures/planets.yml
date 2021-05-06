@@ -8,5 +8,4 @@ valid:
   terrain: "desert"
   surface_water: "1"
   population: "200000"
-  residents: ["http://swapi.dev/api/people/1/", "http://swapi.dev/api/people/2/", "http://swapi.dev/api/people/4/", "http://swapi.dev/api/people/6/", "http://swapi.dev/api/people/7/", "http://swapi.dev/api/people/8/", "http://swapi.dev/api/people/9/", "http://swapi.dev/api/people/11/", "http://swapi.dev/api/people/43/", "http://swapi.dev/api/people/62/"]
   url: "http://swapi.dev/api/planets/1/"

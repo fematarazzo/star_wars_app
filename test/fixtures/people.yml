@@ -7,6 +7,4 @@ valid:
   eye_color: "blue"
   birth_year: "19BBY"
   gender: "male"
-  homeworld: "http://swapi.dev/api/planets/1/"
-  species: []
   url: "http://swapi.dev/api/people/1/"

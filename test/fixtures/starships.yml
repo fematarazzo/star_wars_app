@@ -12,5 +12,4 @@ valid:
   hyperdrive_rating: "2.0"
   MGLT: "60"
   starship_class: "corvette"
-  pilots: []
   url: "http://swapi.dev/api/starships/2/"
