@@ -1,1 +1,71 @@
+<div class="row justify-content-center">
+  <h1>About <%= @person.name %></h1>
+</div>
 
+<div class="mt-5 row card-show justify-content-center">
+    <h3>
+      Hi! My name is <%= @person.name %>.
+
+      <%# Checking Person's species. If it exists, post it. %>
+      <% if @person.species.first %>
+        I'm a <%= @person.species.first.name %>.
+      <% end %>
+
+      <%# Checking Person's homeworld. If it exists, post it. %>
+      <% if @person.planets.first %>
+        I was born in <%= @person.planets.first.name %>
+      <% end %>
+
+      in <%= @person.birth_year %> year
+
+      <%# Checking Person's starships. If it exists, post it. %>
+      <% if @person.starships.first %>
+        <%# If it's only one starship, post it. %>
+        <% if @person.starships.count == 1 %>
+          and I have already piloted <%= @person.starships.first.name %>.
+        <%# If it's two starships, post each name. %>
+        <% elsif @person.starships.count == 2 %>
+          and I have already piloted <%= @person.starships.first.name %> and <%= @person.starships.last.name %>.
+        <% else %>
+          <%= @person.starships.reduce("and I have already piloted") {|phrase, starship| phrase + " #{starship.name},"} %>
+        <% end %>
+      <%# If there is no starship, post no starship. %>
+      <% else %>
+        and I haven't piloted any starship.
+      <% end %>
+
+      <%# Checking Person's gender. If it exists, post it. %>
+      <% if @person.gender != "n/a" %>
+        I'm a <%= @person.gender %>
+      <% else %>
+        I'm an asexual
+      <% end %>
+
+      <%# Checking Person's eyes' color. If it exists, post it. %>
+      <% if @person.eye_color %>
+        with <%= @person.eye_color %> colored eyes
+      <% end %>
+
+      <%# Checking Person's hair' color. If it exists, post it. %>
+      <% if @person.hair_color != "none" && @person.hair_color != "n/a" %>
+        , <%= @person.hair_color %> colored hair
+        <% else %>
+          , no hair
+        <% end %>
+
+      <%# Checking Person's skin' color. If it exists, post it. %>
+      <% if @person.skin_color %>
+        and <%= @person.skin_color %> skin color.
+      <% end %>
+
+      <%# Checking Person's height. If it exists, post it. %>
+      <% if @person.height %>
+        I'm also <%= @person.height %> cm tall
+      <% end %>
+
+      <%# Checking Person's mass. If it exists, post it. %>
+      <% if @person.mass %>
+        and I weight <%= @person.mass %> KGs.
+      <% end %>
+    </h3>
+</div>

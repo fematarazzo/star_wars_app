@@ -1,11 +1,11 @@
 .card-person {
   overflow: hidden;
-  height: 120px;
-  width: 200px;
-  background: #152028;
+  height: 80px;
+  background: #151528;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .card-person h2 {
@@ -13,19 +13,9 @@
   margin: 0;
 }
 
-.card-person h2 {
-  font-size: 16px;
-  margin: 0;
-}
-
-.card-person p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-person .card-person-infos {
-  padding: 16px;
+.card-show {
+  overflow: hidden;
+  background: #151528;
+  padding: 20px;
+  border-radius: 20px;
 }
