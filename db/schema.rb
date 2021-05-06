@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_130809) do
+ActiveRecord::Schema.define(version: 2021_05_06_123149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_130809) do
     t.string "height"
     t.string "mass"
     t.string "skin_color"
-    t.string "homeworld"
-    t.text "species", default: [], array: true
-    t.text "starships", default: [], array: true
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,7 +48,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_130809) do
     t.string "climate"
     t.string "terrain"
     t.string "surface_water"
-    t.text "residents", default: [], array: true
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,8 +63,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_130809) do
     t.string "hair_colors"
     t.string "skin_colors"
     t.string "language"
-    t.string "homeworld"
-    t.text "people", default: [], array: true
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -115,7 +109,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_130809) do
     t.string "MGLT"
     t.string "cargo_capacity"
     t.string "consumables"
-    t.text "pilots", default: [], array: true
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
