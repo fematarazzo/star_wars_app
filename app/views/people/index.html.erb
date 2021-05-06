@@ -1,10 +1,12 @@
-<h1>Bem-vindos ao universo de Star Wars!</h1>
-<h3>Saiba mais sobre cada personagem abaixo:</h3>
-
-<% @people.each do |person| %>
-  <div class="card-person">
-    <div class="card-person-infos">
-      <h2><%= person.name %></h2>
+<div class="row justify-content-center">
+  <h1>Bem-vindos ao universo de Star Wars!</h1>
+</div>
+<div class="row justify-content-center">
+  <% @people.each do |person| %>
+    <div class="card-person m-3 col-12 col-md-4 col-lg-3">
+      <div class="card-person-infos">
+        <h2><%= link_to person.name, person_path(person) %></h2>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

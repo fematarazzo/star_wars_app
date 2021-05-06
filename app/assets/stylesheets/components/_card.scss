@@ -1,15 +1,20 @@
 .card-person {
   overflow: hidden;
   height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 200px;
+  background: #152028;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .card-person h2 {
   font-size: 16px;
-  font-weight: bold;
+  margin: 0;
+}
+
+.card-person h2 {
+  font-size: 16px;
   margin: 0;
 }
 
