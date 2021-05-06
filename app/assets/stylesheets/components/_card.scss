@@ -1,4 +1,4 @@
-.card-person {
+.card {
   overflow: hidden;
   height: 80px;
   background: #151528;
@@ -6,9 +6,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  text-align: center;
 }
 
-.card-person h2 {
+.card h2 {
   font-size: 16px;
   margin: 0;
 }

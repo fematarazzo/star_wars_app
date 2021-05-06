@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+  <h1>
+    This are the Star Wars Planets
+  </h1>
+</div>
+<div class="row justify-content-center">
+  <% @planets.each do |planet| %>
+    <div class="card m-3 col-10 col-md-3 col-lg-2">
+      <div>
+        <h2><%= link_to planet.name, planet_path(planet) %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
