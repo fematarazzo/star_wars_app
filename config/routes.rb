@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'planets/index'
+  get 'planets/show'
   get 'people/index'
   get 'people/show'
   root to: 'pages#home'
