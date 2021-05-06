@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <h1>About <%= @person.name %></h1>
+  <h1 class="mt-3"><%= @person.name %></h1>
 </div>
 
 <div class="mt-5 row card-show justify-content-center">
@@ -12,8 +12,10 @@
       <% end %>
 
       <%# Checking Person's homeworld. If it exists, post it. %>
-      <% if @person.planets.first %>
+      <% if @person.planets.first.name != "unknown" %>
         I was born in <%= @person.planets.first.name %>
+      <% else %>
+        I don't know where I was born, but it happened in
       <% end %>
 
       in <%= @person.birth_year %> year
