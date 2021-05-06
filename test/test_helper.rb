@@ -10,8 +10,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  # include Warden::Test::Helpers
-  # Warden.test_mode!
 end
 
 # Registering new driver for Capybara
